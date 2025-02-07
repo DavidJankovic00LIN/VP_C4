@@ -1,0 +1,10 @@
+-Posto je funkcija wining u pocetnom kodu najzahtevnija ona ide u hardver
+
+-Posto wining() ne koristi ni jedan imenovani algoritam, kod u ovom folderu je samo promena wining mehanizma koja ce upotrebiti neki od imenovanih mehanizama kako bi se odradila njena funkcija,cime bi se omogucio efikasniji rad.
+
+-kao novi algoritam koristi se "Sliding Window" algoritam
+
+-upotrebom novog algoritma smanjen je broj iteracija u odnosu na pocetni kod za 35%- povecana je efikasnots.I dalje je funkvija winning() najzahtevnija,smanjena za 29 mil iter, GetValue() je smanjena za  1 milijardu iteracija, a nemagax za 600Mil manje iteracija. 
+
+-neophodno nastaviti proveru kako bi se vidilo koliko ce ova promena uticati na jednostavnost SoC i VP ??!!
+
