@@ -15,4 +15,10 @@ typedef tlm:tlm_base_protocol_types::tlm_phase_type ph_t;
 
 # define DELAY 9999 //9999 is a placeholder
 
+
+//AXI&BRAM
+#define VP_ADDR_BRAM_L 9999 //9999 is a placeholder
+#define VP_ADDR_BRAM_H 9999 + BRAM_SIZE // 9999 is a placeholder
+
+
 #endif// TYPEDEFS_HPP
