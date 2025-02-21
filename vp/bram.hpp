@@ -6,6 +6,7 @@
 #include<vector>
 #include <tlm>
 #include <tlm_utils/simple_target_socket.h>
+#include "defines.hpp"
 
 class Bram: public sc_core::sc_module
 {
