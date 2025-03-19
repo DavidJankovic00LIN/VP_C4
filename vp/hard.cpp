@@ -17,7 +17,50 @@ Hard::~Hard()
 
 void Hard::b_transport(pl_t &pl,sc_time &offset)
 {
-	
+	tlm_command cmd=pl.get_command();
+	sc_dt::uint64 addr=pl.get_address();
+	unsigned int len= pl.get_data_length();
+	unsigned char *buf= pl.get_data_ptr();
+	pl.set_response_status(TLM_OK_RESPONSE);
+
+	switch(cmd)
+	{
+		case TLM_WRITE_COMMAND:
+			switch(addr)
+			{
+			case ADDR_START:
+				start=toINT(buf);
+				cout<<"start= "<<start<<endl;
+				winning(offset);
+				break;
+			default:
+				pl.set_response_status(TLM_ADDRESS_ERROR_RESPONSE);
+
+			}
+			break;
+		
+		case TLM_READ_COMMAND
+			switch(addr)
+			{
+				// preuzimanje vrednosti sa winninga
+				case ADDR_WIN_VAL:
+					uint8_t win_val=winning(offset);
+					toUchar(buf,win_val);
+					break;
+
+
+				case ADDR_READY:
+					toUchar(buf,ready);
+					break;
+				default
+					pl.set_response_status(TLM_ADDRESS_ERROR_RESPONSE);
+			}
+			break;
+
+		default:
+			pl.set_response_status(tlm::TLM_COMMAND_ERROR_RESPONSE);
+			cout<<"Wrong command"<<endl;
+	}
 }
 
 
@@ -100,9 +143,11 @@ uint8_t Hard::winning(sc_time &system_offset){
 	
 }
 
+
+
 void Hard::write_bram(sc_uint<64> addr, unsigned char val)
 {
-
+// upitno da li je neohodna??
 }
 
 unsigned char Hard::read_bram(sc_uint <64> addr)

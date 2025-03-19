@@ -22,9 +22,12 @@ protected:
 
 	//input parameters
 	char input[43];
+	sc_uint<1> start;
 
 	//output parameters
+	sc_uint<1> ready;
 
+	sc_uint<3> win_value;
 
 	//uint8_t winning();
 	uint8_t winning(sc_time&);
