@@ -33,6 +33,14 @@ protected:
 
 	sc_core:: sc_time offset;
 
+	void Board;
+	int GetValue(int t);
+	int AIManager();
+	int NegaMax(int Depth);
+	void Clean();
+	int game_play();
+
+
 
 	void read_bram(sc_uint<64> addr, unsigned char *all_data,int length);
 	void write_bram(sc_uint<64> addr,unsigned char val);

@@ -64,6 +64,8 @@ void Hard::b_transport(pl_t &pl,sc_time &offset)
 }
 
 
+///proveriti tacno kakao se formira BaseAddres za read_bram i  da li treba??
+
 //hardverska winning funkcija
 uint8_t Hard::winning(sc_time &system_offset){
 	pl_t pl;
@@ -76,13 +78,17 @@ uint8_t Hard::winning(sc_time &system_offset){
 	else if(start==0 && ready==0)
 	{
 		cout<<"Processing started"<<endl;
+
+		//Provera horizontalnih linija
 			for(int row = 0; row < 6; row++){ // 6 redova
 		        for (int col = 0; col <= 3; col++) { // Maksimalno 4 startne tačke po redu
 		            char symbol = input[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == input[row * 7 + col + 1] &&
-		                symbol == input[row * 7 + col + 2] &&
-		                symbol == input[row * 7 + col + 3]) {
+		                symbol == read_bram(row * 7 + col + 1) &&
+		                symbol == read_bram(row * 7 + col + 2) &&
+		                symbol == read_bram(row * 7 + col + 3))
+
+		                								 {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -93,9 +99,9 @@ uint8_t Hard::winning(sc_time &system_offset){
 		        for (int row = 0; row <= 2; row++) { // Maksimalno 3 startne tačke po koloni
 		            char symbol = input[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == input[(row + 1) * 7 + col] &&
-		                symbol == input[(row + 2) * 7 + col] &&
-		                symbol == input[(row + 3) * 7 + col]) {
+		                symbol == read_bram((row + 1) * 7 + col) &&
+		                symbol == read_bram((row + 2) * 7 + col) &&
+		                symbol == read_bram((row + 3) * 7 + col)) {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -106,9 +112,9 @@ uint8_t Hard::winning(sc_time &system_offset){
 		        for (int col = 0; col <= 3; col++) { // 4 startne tačke po koloni
 		            char symbol = input[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == input[(row + 1) * 7 + col + 1] &&
-		                symbol == input[(row + 2) * 7 + col + 2] &&
-		                symbol == input[(row + 3) * 7 + col + 3]) {
+		                symbol == read_bram((row + 1) * 7 + col + 1) &&
+		                symbol == read_bram((row + 2) * 7 + col + 2) &&
+		                symbol == read_bram((row + 3) * 7 + col + 3)) {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -119,9 +125,9 @@ uint8_t Hard::winning(sc_time &system_offset){
 		        for (int col = 3; col < 7; col++) { // 4 startne tačke po koloni
 		            char symbol = input[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == input[(row + 1) * 7 + col - 1] &&
-		                symbol == input[(row + 2) * 7 + col - 2] &&
-		                symbol == input[(row + 3) * 7 + col - 3]) {
+		                symbol == read_bram((row + 1) * 7 + col - 1) &&
+		                symbol == read_bram((row + 2) * 7 + col - 2) &&
+		                symbol == read_bram((row + 3) * 7 + col - 3)) {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -147,10 +153,31 @@ uint8_t Hard::winning(sc_time &system_offset){
 
 void Hard::write_bram(sc_uint<64> addr, unsigned char val)
 {
-// upitno da li je neohodna??
+    // upitno da li je neohodna??
+	/*pl_t pl;
+	unsigned char buf;
+	buf = val;
+	pl.set_address(addr);
+	pl.set_data_length(1); 
+	pl.set_data_ptr(&buf);
+	pl.set_command( tlm::TLM_WRITE_COMMAND );
+	pl.set_response_status ( tlm::TLM_INCOMPLETE_RESPONSE );
+	bram_socket->b_transport(pl, offset);*/
+
+
 }
 
 unsigned char Hard::read_bram(sc_uint <64> addr)
 {
+
+	pl_t pl;
+	unsigned char buf;
+	pl.set_address(addr);
+	pl.set_data_length(1);
+	pl.set_data_ptr(&buf);
+	pl.set_command(tlm:TLM_READ_COMMAND);
+	pl.set_response_status(tlm::TLM_INCOMPLETE_RESPONSE);
+	bram_socket->b_transport(pl,offset);
+	return buf;
 
 }
