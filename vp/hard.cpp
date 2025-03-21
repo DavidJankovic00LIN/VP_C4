@@ -1,3 +1,5 @@
+//ispravi hard !!
+
 #include "hard.hpp"
 
 SC_HAS_PROCESS(Hard);
@@ -148,6 +150,8 @@ uint8_t Hard::winning(sc_time &system_offset){
 	}	//stay inside
 	
 }
+
+
 
 
 

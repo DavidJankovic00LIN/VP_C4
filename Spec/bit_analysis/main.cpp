@@ -280,7 +280,7 @@ int main() // main funkcija gde AI ima prvi potez
         system("clear");
         Board();
         uint8_t winningtemp = winning();
-		cout << "Velicina winning() je: " << sizeof(winning()) << endl;
+		//cout << "Velicina winning() je: " << sizeof(winning()) << endl;
         if (winningtemp != 0)
         {
             if (winningtemp == 1){
@@ -338,6 +338,8 @@ int AIManager() // AI Algorithm
     }
     return chance[1];
 }
+
+
 int NegaMax(int Depth) // MiniMax algorithm in NegaMax form
 {
     char XO;
