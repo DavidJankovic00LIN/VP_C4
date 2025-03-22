@@ -40,6 +40,8 @@ protected:
 	void Clean();
 	int game_play();
 
+	int get_ip();
+
 
 
 	void read_bram(sc_uint<64> addr, unsigned char *all_data,int length);

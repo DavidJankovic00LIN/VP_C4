@@ -9,7 +9,7 @@ int write_ddr_cnt=0;
 Cpu::Cpu(sc_core::sc_module_name name): sc_module(name), offset(sc_core::SC_ZERO_TIME)
 {
 	
-	SC_THREAD(game_play);
+	SC_THREAD(get_ip);
 	SC_REPORT_INFO("CPU","Constructed.");
 
 
@@ -27,7 +27,29 @@ void Cpu::clean()
 		write_bram(i,' ');
 }
 
+int Cpu::get_ip()
+{
+	SC_REPORT_INFO("CPU", "Starting HARD processing");
 
+	write_hard(ADDR_START,1) // Pokretanje IP-a
+	bool done=false;
+	while(!done)
+	{
+		int ready=read_hard(ADDR_READY);
+		SC_REPORT_INFO("CPU", ("Ready status: " + std::to_string(ready)).c_str());
+
+		if(ready){
+			write_hard(ADDR_START,0);
+			done=true;
+		}else{
+			wait(DELAY,SC_NS);
+		}
+	}	
+	SC_REPORT_INFO("CPU","Geting winner value")
+	int ip_result=read_hard(ADDR_WIN_VAL);
+	SC_REPORT_INFO("CPU","HARD processing done")
+	return ip_result;
+}
 
 int Cpu::GetValue(int column) //uzima kolonu(1-7),i ako je ta kolona u tom redu free,upisuje u nju.
 {
@@ -147,8 +169,7 @@ int Cpu::AIManager()
 		if(PlayNumber!=0)
 		{
 			write_bram(PlayNumber,'O');
-			//!!read_hard??!!
-			if(winning()==2)
+			if(get_ip()==2)
 			{
 				write_bram(PlayNumber,' ');
 				return PlayNumber;
@@ -191,7 +212,7 @@ int Cpu::NegaMax(int Depth)
         	write_bram(PlayNumber[column],XO);
         	//!!read_hard??!!
 
-        	if(winning()!=0)
+        	if(get_ip()!=0)
         	{
         		PlayOut ++;
         		if(XO=='O')
@@ -213,8 +234,8 @@ int Cpu::NegaMax(int Depth)
     		{
     			write_bram(PlayNumber[column],XO);
 
-    			//read_hard??!!
-    			if (winning() !=0)
+    			
+    			if (get_ip() !=0)
     			{
     				PlayOut++;
     				if(XO=='O')
