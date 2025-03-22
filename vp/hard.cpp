@@ -82,6 +82,7 @@ uint8_t Hard::winning(sc_time &system_offset){
 		cout<<"Processing started"<<endl;
 
 		//Provera horizontalnih linija
+			
 			for(int row = 0; row < 6; row++){ // 6 redova
 		        for (int col = 0; col <= 3; col++) { // Maksimalno 4 startne tačke po redu
 		            char symbol = input[row * 7 + col];

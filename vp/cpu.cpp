@@ -35,18 +35,18 @@ int Cpu::get_ip()
 	bool done=false;
 	while(!done)
 	{
-		int ready=read_hard(ADDR_READY);
+		int ready=read_hard(ADDR_READY); //proverava status ready-a i u sl redu ispisuje
 		SC_REPORT_INFO("CPU", ("Ready status: " + std::to_string(ready)).c_str());
 
 		if(ready){
-			write_hard(ADDR_START,0);
+			write_hard(ADDR_START,0); //zaustavi IP(postavi start na 0)
 			done=true;
 		}else{
-			wait(DELAY,SC_NS);
+			wait(DELAY,SC_NS); // cekaj dok hardverska komponenta ne zavrsi
 		}
 	}	
 	SC_REPORT_INFO("CPU","Geting winner value")
-	int ip_result=read_hard(ADDR_WIN_VAL);
+	int ip_result=read_hard(ADDR_WIN_VAL); // procitaj rezultat iz hardvera
 	SC_REPORT_INFO("CPU","HARD processing done")
 	return ip_result;
 }
