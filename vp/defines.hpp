@@ -1,4 +1,4 @@
-//9999 is a placeholder
+
 
 #ifndef TYPEDEFS_HPP
 #define TYPEDEFS_HPP
@@ -10,15 +10,20 @@
 typedef tlm:tlm_base_protocol_types::tlm_payload_type pl_t;
 typedef tlm:tlm_base_protocol_types::tlm_phase_type ph_t;
 
-//bram size -to be determined-
-#define BRAM_SIZE 9999 //9999 is a placeholder
+//registers in hard
+#define ADDR_START 0x00
+#define ADDR_READY 0x01
+#define ADDR_WIN_VAL 0x02
 
-# define DELAY 9999 //9999 is a placeholder
+//bram size 
+#define BRAM_SIZE 0x3A980 //BRAM size 240KB
+
+# define DELAY 10 //macro for offser (Delay =T=1/f=1/100Mhz=10ns)
 
 
 //AXI&BRAM
-#define VP_ADDR_BRAM_L 9999 //9999 is a placeholder
-#define VP_ADDR_BRAM_H 9999 + BRAM_SIZE // 9999 is a placeholder
+#define VP_ADDR_BRAM_L 0x00000000 
+#define VP_ADDR_BRAM_H 0x00000000 + BRAM_SIZE 
 
 
 #endif// TYPEDEFS_HPP

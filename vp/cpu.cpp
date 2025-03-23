@@ -51,6 +51,85 @@ int Cpu::get_ip()
 	return ip_result;
 }
 
+/*
+U ovoj varijanti funkcije game_play korisnik ima prednost prvog poteza;
+int Cpu::game_play()
+{
+	int tempAI;
+	srand(time(0));
+	clean();
+	
+	while(true){
+		PlayPosition('X');// uzima se korisnikov potez
+		Board();
+		tempAI=AIManager();
+		int Win_Value=get_ip(); //cita stanje pobednika sa registra
+
+		if(Win_Value!=0)
+		{
+			if(Win_Value==1)
+			{
+				cout<<endl<<"Player 2 WON!";
+				return 0;
+			}
+			else if (Win_Value==2)
+			{
+				cout<<endl<<"Player 1 WON!";
+				return 0;
+			}
+			else if(Win_Value==3){
+				cout<<"You Tie!";
+				return 0;
+			}
+			clean();
+		}else{
+			write_bram(tempAI,'O');
+		}
+
+	}
+	return 0;
+}
+*/
+
+
+int Cpu::game_play()
+{
+	int tempAI;
+	srand(time(0));
+	clean();
+	tempAI=AIManager();
+	while(true){
+		write_bram(tempAI,'0');
+		Board();
+		int Win_Value=get_ip(); //cita stanje pobednika sa registra
+
+		if(Win_Value!=0)
+		{
+			if(Win_Value==1)
+			{
+				cout<<endl<<"Player 2 WON!";
+				return 0;
+			}
+			else if (Win_Value==2)
+			{
+				cout<<endl<<"Player 1 WON!";
+				return 0;
+			}
+			else if(Win_Value==3){
+				cout<<"You Tie!";
+				return 0;
+			}
+			clean();
+		}else{
+			PlayPosition('X'); //Bira se korisnicki potez
+		}
+
+	}
+	return 0;
+}
+
+
+
 int Cpu::GetValue(int column) //uzima kolonu(1-7),i ako je ta kolona u tom redu free,upisuje u nju.
 {
 	if(column>7)
