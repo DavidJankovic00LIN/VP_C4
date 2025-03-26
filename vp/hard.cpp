@@ -4,12 +4,12 @@
 
 SC_HAS_PROCESS(Hard);
 
-Hard::Hard(sc_module_name name);
+Hard::Hard(sc_module_name name):
 	sc_modlue(name),
 	ready(1)
 	{
-		interconnect_socket.register_b_transport(this,&Hard::b_reansport);
-		SC_REPORT_INFO("Hard", "Constructed.")
+		interconnect_socket.register_b_transport(this,&Hard::b_transport);
+		SC_REPORT_INFO("Hard", "Constructed.");
 	}
 
 Hard::~Hard()
@@ -46,7 +46,7 @@ void Hard::b_transport(pl_t &pl,sc_time &offset)
 			{
 				// preuzimanje vrednosti sa winninga
 				case ADDR_WIN_VAL:
-					uint8_t win_val=winning(offset);
+					int win_val=winning(offset);
 					toUchar(buf,win_val);
 					break;
 
@@ -74,7 +74,7 @@ uint8_t Hard::winning(sc_time &system_offset){
 
 	if (start == 1 && ready==1){
 		ready=0;
-		offset+=sc_time(DELAY,SC_NS);
+		offset += sc_time(DELAY,sc_core::SC_NS);
 	}
 
 	else if(start==0 && ready==0)
@@ -180,7 +180,7 @@ unsigned char Hard::read_bram(sc_uint <64> addr)
 	pl.set_address(addr);
 	pl.set_data_length(1);
 	pl.set_data_ptr(&buf);
-	pl.set_command(tlm:TLM_READ_COMMAND);
+	pl.set_command(tlm::TLM_READ_COMMAND);
 	pl.set_response_status(tlm::TLM_INCOMPLETE_RESPONSE);
 	bram_socket->b_transport(pl,offset);
 	return buf;

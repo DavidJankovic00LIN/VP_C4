@@ -1,10 +1,10 @@
 #include "interconnect.hpp"
-#include <string> //??
+#include <string> 
 
 Interconnect::Interconnect(sc_core::sc_module_name name)
 
-	:sc_module(name)
-	, offset(sc_core::SC_ZERO_TIME)
+	:sc_module(name),
+	 offset(sc_core::SC_ZERO_TIME)
 {
 	cpu_socket.register_b_transport(this, &Interconnect::b_transport);
 	SC_REPORT_INFO("Interconnect","Constructed.");
@@ -20,7 +20,7 @@ Interconnect::~Interconnect()
 void Interconnect::b_transport(pl_t &pl,sc_core::sc_time &offset)
 {
 	sc_dt::uint64 addr=pl.get_address();
-	sc_dt::unit64 taddr=addr 
+	sc_dt::uint64 taddr=addr &0x00FFFFFF ;
 
 	if(addr >= VP_ADDR_BRAM_L && addr <= VP_ADDR_BRAM_H)
 	{

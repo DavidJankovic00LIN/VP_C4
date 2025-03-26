@@ -7,6 +7,8 @@
 #include<tlm_utils/simple_target_socket.h>
 #include "defines.hpp"
 
+using namespace tlm;
+
 class Hard: public sc_module
 {
 public:

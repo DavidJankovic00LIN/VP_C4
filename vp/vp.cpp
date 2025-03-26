@@ -2,7 +2,7 @@
 
 Vp::Vp (sc_core::sc_module_name name,char** strings,int argv):
 sc_module(name),
-cpu("Cpu",strigs,argv),
+cpu("Cpu",strings,argv),
 interconnect("Interconnect"),
 hard("Hard"),
 bram("Bram")
@@ -19,6 +19,6 @@ bram("Bram")
 
 Vp::~Vp()
 {
-	SC_REPORT_INFO("VP","Destroyed.")
+	SC_REPORT_INFO("VP","Destroyed.");
 }
 

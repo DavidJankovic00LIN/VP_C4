@@ -1,10 +1,7 @@
-/// $$$ lin 7 , 23
- 
-#include "bram.hpp"
+ #include "bram.hpp"
 
-Bram::Bram(sc_core::sc_moudle_name name):sc_moudle(name)
+Bram::Bram(sc_core::sc_moudle_name name):sc_module(name)
 {
-	// $$$ povecati ili smanjiti broj soketa ako se utvrdi da treba vise pristupa bram-u
 	
 	bram_socket_1.register_b_transport(this,&Bram::b_transport);
 	bram_socket_2.register_b_transport(this,&Bram::b_transport);
@@ -36,24 +33,24 @@ void Bram::b_transport(pl_t &pl, sc_core::sc_time &offset)
 		{
 			mem[addr++] = buf[i]; // podatak iz bafera se upisuje u memoriju i povecava se adreas
 		}
-		pl.set_resoinse_status(tml::TLM_OK_RESPONSE); // dobija status ok nakon zavrsetka upisa
+		pl.set_response_status(tml::TLM_OK_RESPONSE); // dobija status ok nakon zavrsetka upisa
 
 		offset += sc_core::sc_time(DELAY,sc_core::SC_NS); //simulirano je kasnjenje  da bi se emuliralo realno vreme pristupa memoriji
 		break;
 
-	case TLM_READ_COMMAND:
+	case tlm::TLM_READ_COMMAND:
 		for (unsigned int i =0; i<len; ++i)
 		{
 			buf[i]=mem[addr++]; // iz memorije sa adrese se premesta podatak u bafer, pomera se mesto u memoriji
 		}
-		pl.set_resoinse_status(tlm::TLM_OK_RESPONSE);
+		pl.set_response_status(tlm::TLM_OK_RESPONSE);
 
 		offset += sc_core::sc_time(DELAY,sc_core::SC_NS);
 		break;
 
 	default:
-		pl.set_resoinse_status(tml::TLM_COMMAND_ERROR_RESPONSE)		
-		offset +=sc_core::sc_time(DELAY,sc_core::SC_NS);
+		pl.set_response_status(tlm::TLM_COMMAND_ERROR_RESPONSE)		
+		offset += sc_core::sc_time(DELAY,sc_core::SC_NS);
 	}
 
 }

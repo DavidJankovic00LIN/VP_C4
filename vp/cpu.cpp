@@ -16,7 +16,7 @@ Cpu::Cpu(sc_core::sc_module_name name): sc_module(name), offset(sc_core::SC_ZERO
 }
 Cpu::~Cpu()
 {
-	SC_REPORT_INFO("Cpu", "Destroyed.")
+	SC_REPORT_INFO("Cpu", "Destroyed.");
 }
 
 
@@ -31,11 +31,11 @@ int Cpu::get_ip()
 {
 	SC_REPORT_INFO("CPU", "Starting HARD processing");
 
-	write_hard(ADDR_START,1) // Pokretanje IP-a
-	bool done=false;
+	write_hard(ADDR_START,1); // Pokretanje IP-a
+	bool done = false;
 	while(!done)
 	{
-		int ready=read_hard(ADDR_READY); //proverava status ready-a i u sl redu ispisuje
+		int ready = read_hard(ADDR_READY); //proverava status ready-a i u sl redu ispisuje
 		SC_REPORT_INFO("CPU", ("Ready status: " + std::to_string(ready)).c_str());
 
 		if(ready){
@@ -65,7 +65,7 @@ int Cpu::game_play()
 		tempAI=AIManager();
 		int Win_Value=get_ip(); //cita stanje pobednika sa registra
 
-		if(Win_Value!=0)
+		if(Win_Value!=O)
 		{
 			if(Win_Value==1)
 			{
@@ -99,7 +99,7 @@ int Cpu::game_play()
 	clean();
 	tempAI=AIManager();
 	while(true){
-		write_bram(tempAI,'0');
+		write_bram(tempAI,'O');
 		Board();
 		int Win_Value=get_ip(); //cita stanje pobednika sa registra
 
@@ -138,7 +138,7 @@ int Cpu::GetValue(int column) //uzima kolonu(1-7),i ako je ta kolona u tom redu 
 	for(int i=0; i<=6; i++)
 	{	
 		char temp_s
-		read_bram(column+7*i,&temp_s,1)
+		read_bram(column+7*i,&temp_s,1);
 		if(temp_s== ' ')
 		{
 			n=column+7*i;
@@ -212,12 +212,13 @@ void Cpu::PlayPosition(char XO)
 		currentMoveIndex=0;
 	}
 
-	if(currentMoveIndex<move.size())
+	if(currentMoveIndex<moves.size())
 	{
 		int sth=GetValue(moves[currentMoveIndex++]);
 		char temp_xo;
 		read_bram(sth,&temp_xo,1);
-		while(sth==0 || temp_xo!='')
+		
+		while(sth==0 || temp_xo!=' ')
 		{
 			cout<<"WARNING: Invalid move or position already taken. Taking the next available position."<<endl;
 			sth=GetValue(moves[currentMoveIndex]);
@@ -276,7 +277,7 @@ int Cpu::AIManager()
 int Cpu::NegaMax(int Depth)
 {
 	char XO;
-	int PlayNumber[8]=0,0,0,0,0,0,0,0}; // The values of the input[] for every column
+	int PlayNumber[8]= {0,0,0,0,0,0,0,0}; // The values of the input[] for every column
     int chance=0;
     if(Depth % 2 != 0)
         XO='X';
@@ -289,7 +290,7 @@ int Cpu::NegaMax(int Depth)
         if(PlayNumber[column] != 0)
         {
         	write_bram(PlayNumber[column],XO);
-        	//!!read_hard??!!
+        	
 
         	if(get_ip()!=0)
         	{
@@ -321,19 +322,19 @@ int Cpu::NegaMax(int Depth)
     					EVA++;
     				else
     					EVA--;
-    				write_bram(PlayNumber[column],' ');
+    				write_bram(PlayNumber[column], ' ');
     				return -1;
     			}
     			temp=NegaMax(Depth+1);
     			if(column==1)
     				chanse=temp;
     			if(chanse<temp)
-    				chanse=temp
+    				chanse=temp;
     			write_bram(PlayNumber[column], ' ');
     		}
     	}
     }    
-    return -chance;
+    return -chanse;
 }
 
 
@@ -342,7 +343,7 @@ int Cpu::NegaMax(int Depth)
 void Cpu::write_bram(sc_uint<64> addr, unsigned char val)
 {
 	pl_t pl;
-	offset +=sc_core::sc_time(DELAY, sc_core::SC_NS);
+	offset += sc_core::sc_time(DELAY, sc_core::SC_NS);
 	unsigned char buf;
 	read_ddr_cnt++;
 	buf = val;
@@ -355,7 +356,7 @@ void Cpu::write_bram(sc_uint<64> addr, unsigned char val)
 
 void Cpu::read_bram(sc_uint<64> addr,unsigned char *all_data, int length)
 {
-	offset +=sc_core::sc_time((9+1) * DELAY,sc_core::SC_NS); // istraziti zasot je ovako izracunat offset?
+	offset += sc_core::sc_time((9+1) * DELAY,sc_core::SC_NS); // istraziti zasot je ovako izracunat offset?
 	pl_t pl;
 	unsigned char buf;
 	int n=0;
@@ -384,7 +385,7 @@ int Cpu::read_hard(sc_uint<64> addr)
 	pl.set_address(VP_ADDR_IP_HARD_L + addr);
 	pl.set_data_length(1);
 	pl.set_data_ptr(buf);
-	pl.set_set_command(tlm::TLM_READ_COMMAND);
+	pl.set_command(tlm::TLM_READ_COMMAND);
 	pl.set_response_status(tlm::TLM_INCOMPLETE_RESPONSE);
 	sc_core::sc_time offset=sc_core::SC_ZERO_TIME;
 	interconnect_socket->b_transport(pl,offset);

@@ -16,7 +16,7 @@ using namespace sc_core;
 using namespace tlm;
 using namespace sc_dt;
 
-int toInt(unsigned char *buf)
+int toInt(unsigned char *buf);
 void toUchar(unsigned char *buf,int val);
 
 #endif
