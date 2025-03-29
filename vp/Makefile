@@ -1,14 +1,19 @@
-CC="g++"
-
-# Project name
+CC = g++
 PROJECT = c4_specifikacija
-
-# Source files
 SRC = main.cpp interconnect.cpp hard.cpp cpu.cpp bram.cpp vp.cpp utils.cpp
+OBJ = $(SRC:.cpp=.o)
+SYSTEMC = /usr/local/systemc
 
 
-$(PROJECT) : $(SRC)
-	$(CC) -g -lsystemc $(SRC) -o $(PROJECT) 
+CXXFLAGS = -g -Wall -I$(SYSTEMC)/include
+CXXFLAGS += -Wno-unused-variable  
+LDFLAGS = -L$(SYSTEMC)/lib-linux64 -lsystemc -lm
+
+$(PROJECT): $(OBJ)
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)  
+
+%.o: %.cpp
+	$(CC) $(CXXFLAGS) -c $< -o $@
 
 run:
 	./$(PROJECT)
@@ -16,4 +21,4 @@ run:
 clean:
 	rm -f $(PROJECT) *.o *.vcd
 
-.PHONY all clean run
+.PHONY: clean run

@@ -1,0 +1,45 @@
+-Ovo je izlaz pri prvom uspesnom kompajliranju i pokretanju.
+-Neophodno dodati jos poruka iz sisteme vezanih za rezultat igre,ispis table,kao i najbtinije vremenski stampovi
+-Proveriti da li je dovoljno dugacko vreme simulacije
+-Warning w506 ce biti vec korigovan pre commit-a
+-Jos jednom proveriti logiku iza pokretanja hardvera
+
+        SystemC 2.3.3-Accellera --- Mar 17 2022 13:55:26
+        Copyright (c) 1996-2018 by all Contributors,
+        ALL RIGHTS RESERVED
+
+Warning: (W506) illegal characters: Virtuelna platforma substituted by Virtuelna_platforma
+In file: kernel/sc_object.cpp:247
+
+Info: CPU: Constructed.
+
+Info: Interconnect: Constructed.
+
+Info: Hard: Constructed.
+
+Info: BRAM: Constructed.
+
+Info: VP: Constructed.
+
+Info: CPU: Starting HARD processing
+start= 1
+
+Info: CPU: Ready status: 1
+start= 0
+
+Info: CPU: Geting winner value
+
+Info: CPU: HARD processing done
+
+Info: VP: Destroyed.
+
+Info: BRAM: Destroyed.
+
+Info: Hard: Destroyed
+
+Info: Interconnect: Destroyed
+
+Info: Cpu: Destroyed.
+
+
+

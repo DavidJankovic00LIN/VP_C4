@@ -3,11 +3,11 @@
 
 #include<systemc>
 #include<vector>
-#include<tlm_utils/simple_initiator_socket.h>
-#include<tlm_utils/simple_target_socket.h>
+#include <tlm_utils/simple_initiator_socket.h>
+#include <tlm_utils/simple_target_socket.h>
 #include "defines.hpp"
+#include "utils.hpp"
 
-using namespace tlm;
 
 class Hard: public sc_module
 {
@@ -15,7 +15,7 @@ public:
 	Hard(sc_module_name);
 	~Hard();
 
-	tlm_utils::simple_targer_socket<Hard> interconnect_socket;
+	tlm_utils::simple_target_socket<Hard> interconnect_socket;
 	tlm_utils::simple_initiator_socket<Hard> bram_socket;
 
 protected:
@@ -31,14 +31,13 @@ protected:
 
 	sc_uint<3> win_value;
 
-	//uint8_t winning();
 	uint8_t winning(sc_time&);
 
 	void b_transport(pl_t&, sc_time&);
 	void write_bram(sc_uint<64> addr, unsigned char val);
 	unsigned char read_bram(sc_uint<64> addr);
 
-}
+};
 
 
 

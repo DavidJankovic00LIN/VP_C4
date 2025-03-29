@@ -6,8 +6,8 @@
 #include <iostream>
 #include <string>
 #include "defines.hpp"
-#include <tlm_utils/tlm_initiator_socket.h>
-#include<tlm_utils/simple_target_socket.h>
+#include <tlm_utils/simple_initiator_socket.h>
+#include <tlm_utils/simple_target_socket.h>
 #include "tlm_utils/tlm_quantumkeeper.h"
 
 

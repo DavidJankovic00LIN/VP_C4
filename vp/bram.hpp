@@ -1,7 +1,7 @@
 #ifndef _BRAM_HPP_
 #define _BRAM_HPP_
 
-#include<sysyemc>
+#include<systemc>
 #include<iostream>
 #include<vector>
 #include <tlm>
@@ -19,7 +19,7 @@ class Bram: public sc_core::sc_module
 
 	protected:
 		void b_transport(pl_t &,sc_core::sc_time &);
-		std::std::vector<unsigned char> mem;
+		std::vector<unsigned char> mem;
 
 };
 

@@ -6,7 +6,15 @@ SC_HAS_PROCESS(Cpu);
 int read_ddr_cnt=0;
 int write_ddr_cnt=0;
 
-Cpu::Cpu(sc_core::sc_module_name name): sc_module(name), offset(sc_core::SC_ZERO_TIME)
+
+
+Cpu::Cpu(sc_core::sc_module_name name): 
+sc_module(name), 
+PlayOut(0),
+EVA(0),
+provocation(false),
+offset(sc_core::SC_ZERO_TIME),
+ip_result(0)
 {
 	
 	SC_THREAD(get_ip);
@@ -27,7 +35,7 @@ void Cpu::clean()
 		write_bram(i,' ');
 }
 
-int Cpu::get_ip()
+void Cpu::get_ip()
 {
 	SC_REPORT_INFO("CPU", "Starting HARD processing");
 
@@ -45,10 +53,10 @@ int Cpu::get_ip()
 			wait(DELAY,SC_NS); // cekaj dok hardverska komponenta ne zavrsi
 		}
 	}	
-	SC_REPORT_INFO("CPU","Geting winner value")
-	int ip_result=read_hard(ADDR_WIN_VAL); // procitaj rezultat iz hardvera
-	SC_REPORT_INFO("CPU","HARD processing done")
-	return ip_result;
+	SC_REPORT_INFO("CPU","Geting winner value");
+	ip_result=read_hard(ADDR_WIN_VAL); // procitaj rezultat iz hardvera
+	SC_REPORT_INFO("CPU","HARD processing done");
+
 }
 
 /*
@@ -63,7 +71,8 @@ int Cpu::game_play()
 		PlayPosition('X');// uzima se korisnikov potez
 		Board();
 		tempAI=AIManager();
-		int Win_Value=get_ip(); //cita stanje pobednika sa registra
+		get_ip();
+		int Win_Value=ip_result; //cita stanje pobednika sa registra
 
 		if(Win_Value!=O)
 		{
@@ -101,7 +110,8 @@ int Cpu::game_play()
 	while(true){
 		write_bram(tempAI,'O');
 		Board();
-		int Win_Value=get_ip(); //cita stanje pobednika sa registra
+		get_ip();
+		int Win_Value=ip_result; //cita stanje pobednika sa registra
 
 		if(Win_Value!=0)
 		{
@@ -137,7 +147,7 @@ int Cpu::GetValue(int column) //uzima kolonu(1-7),i ako je ta kolona u tom redu 
 	int n;
 	for(int i=0; i<=6; i++)
 	{	
-		char temp_s
+		unsigned char temp_s;
 		read_bram(column+7*i,&temp_s,1);
 		if(temp_s== ' ')
 		{
@@ -167,8 +177,10 @@ void Cpu::Board() // funkcija za crtanje table
             {
                 j=42-(0.25*i+0.5)*6-((0.25*i+0.5)-1) ;
                 for(int i = 0 ; i<=6 ; i++)
-                {
-                    cout<<"|"<<"   "<<input[j]<<"   ";
+                {	
+                	unsigned char temp_b;
+                	read_bram(j,&temp_b,1);
+                    cout<<"|"<<"   "<<temp_b<<"   ";
                     j++;
                 }
                 cout<<"|";
@@ -215,7 +227,7 @@ void Cpu::PlayPosition(char XO)
 	if(currentMoveIndex<moves.size())
 	{
 		int sth=GetValue(moves[currentMoveIndex++]);
-		char temp_xo;
+		unsigned char temp_xo;
 		read_bram(sth,&temp_xo,1);
 		
 		while(sth==0 || temp_xo!=' ')
@@ -239,7 +251,7 @@ void Cpu::PlayPosition(char XO)
 
 int Cpu::AIManager()
 {
-	float chanse[2]={9999999 , 0 };
+	float chance[2]={9999999 , 0 };
 	for(int column=1; column<=7; column ++)
 	{
 		PlayOut=0;
@@ -249,7 +261,8 @@ int Cpu::AIManager()
 		if(PlayNumber!=0)
 		{
 			write_bram(PlayNumber,'O');
-			if(get_ip()==2)
+			get_ip();
+			if(ip_result==2)
 			{
 				write_bram(PlayNumber,' ');
 				return PlayNumber;
@@ -260,24 +273,24 @@ int Cpu::AIManager()
 				temp -=((100*EVA)/PlayOut);
 			if(-temp>=100)
 				provocation=true;
-			if(chanse[0]>temp)
+			if(chance[0]>temp)
 			{
-				chanse[0]=temp;
-				chanse[1]=PlayNumber;
+				chance[0]=temp;
+				chance[1]=PlayNumber;
 			}
 			write_bram(PlayNumber,' ');
 		}
 	}
 
-	return chanse[1];
+	return chance[1];
 
 
 }
 
-int Cpu::NegaMax(int Depth)
+/*int Cpu::NegaMax(int Depth)
 {
 	char XO;
-	int PlayNumber[8]= {0,0,0,0,0,0,0,0}; // The values of the input[] for every column
+	int PlayNumber[8]= {0,0,0,0,0,0,0,0}; 
     int chance=0;
     if(Depth % 2 != 0)
         XO='X';
@@ -291,8 +304,9 @@ int Cpu::NegaMax(int Depth)
         {
         	write_bram(PlayNumber[column],XO);
         	
+        	get_ip();
 
-        	if(get_ip()!=0)
+        	if(ip_result!=0)
         	{
         		PlayOut ++;
         		if(XO=='O')
@@ -314,8 +328,8 @@ int Cpu::NegaMax(int Depth)
     		{
     			write_bram(PlayNumber[column],XO);
 
-    			
-    			if (get_ip() !=0)
+    			get_ip();
+    			if (ip_result !=0)
     			{
     				PlayOut++;
     				if(XO=='O')
@@ -327,16 +341,73 @@ int Cpu::NegaMax(int Depth)
     			}
     			temp=NegaMax(Depth+1);
     			if(column==1)
-    				chanse=temp;
-    			if(chanse<temp)
-    				chanse=temp;
+    				chance=temp;
+    			if(chance<temp)
+    				chance=temp;
     			write_bram(PlayNumber[column], ' ');
     		}
     	}
-    }    
-    return -chanse;
-}
 
+    }    
+    return -chance;
+	}
+}
+*/
+int Cpu::NegaMax(int Depth) {
+    char XO;
+    int PlayNumber[8] = {0,0,0,0,0,0,0,0}; 
+    int chance = 0;
+    
+    if (Depth % 2 != 0)
+        XO = 'X';
+    else
+        XO = 'O';
+        
+    for (int column = 1; column <= 7; column++)
+        PlayNumber[column] = GetValue(column);
+        
+    for (int column = 1; column <= 7; column++) {
+        if (PlayNumber[column] != 0) {
+            write_bram(PlayNumber[column], XO);
+            get_ip();
+
+            if (ip_result != 0) {
+                PlayOut++;
+                if (XO == 'O') EVA++;
+                else EVA--;
+                write_bram(PlayNumber[column], ' ');
+                return -1;
+            }
+            write_bram(PlayNumber[column], ' ');
+        }
+    }
+
+    if (Depth <= 6) {
+        for (int column = 1; column <= 7; column++) {
+            int temp = 0;
+            if (PlayNumber[column] != 0) {
+                write_bram(PlayNumber[column], XO);
+                get_ip();
+                if (ip_result != 0) {
+                    PlayOut++;
+                    if (XO == 'O') EVA++;
+                    else EVA--;
+                    write_bram(PlayNumber[column], ' ');
+                    return -1;
+                }
+                temp = NegaMax(Depth + 1);
+                if (column == 1)
+                    chance = temp;
+                if (chance < temp)
+                    chance = temp;
+                write_bram(PlayNumber[column], ' ');
+            }
+        }
+    }
+    
+    // Dodajemo eksplicitni return na kraju funkcije
+    return -chance;
+}
 
 // funkcije za komunikaciju za bram i hardom
 
@@ -356,7 +427,7 @@ void Cpu::write_bram(sc_uint<64> addr, unsigned char val)
 
 void Cpu::read_bram(sc_uint<64> addr,unsigned char *all_data, int length)
 {
-	offset += sc_core::sc_time((9+1) * DELAY,sc_core::SC_NS); // istraziti zasot je ovako izracunat offset?
+	offset += sc_core::sc_time((9+1) * DELAY,sc_core::SC_NS); 
 	pl_t pl;
 	unsigned char buf;
 	int n=0;

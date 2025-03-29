@@ -1,6 +1,6 @@
  #include "bram.hpp"
 
-Bram::Bram(sc_core::sc_moudle_name name):sc_module(name)
+Bram::Bram(sc_core::sc_module_name name):sc_module(name)
 {
 	
 	bram_socket_1.register_b_transport(this,&Bram::b_transport);
@@ -33,7 +33,7 @@ void Bram::b_transport(pl_t &pl, sc_core::sc_time &offset)
 		{
 			mem[addr++] = buf[i]; // podatak iz bafera se upisuje u memoriju i povecava se adreas
 		}
-		pl.set_response_status(tml::TLM_OK_RESPONSE); // dobija status ok nakon zavrsetka upisa
+		pl.set_response_status(tlm::TLM_OK_RESPONSE); // dobija status ok nakon zavrsetka upisa
 
 		offset += sc_core::sc_time(DELAY,sc_core::SC_NS); //simulirano je kasnjenje  da bi se emuliralo realno vreme pristupa memoriji
 		break;
@@ -49,7 +49,7 @@ void Bram::b_transport(pl_t &pl, sc_core::sc_time &offset)
 		break;
 
 	default:
-		pl.set_response_status(tlm::TLM_COMMAND_ERROR_RESPONSE)		
+		pl.set_response_status(tlm::TLM_COMMAND_ERROR_RESPONSE);		
 		offset += sc_core::sc_time(DELAY,sc_core::SC_NS);
 	}
 

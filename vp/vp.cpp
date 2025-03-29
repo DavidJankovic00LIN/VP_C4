@@ -1,8 +1,8 @@
 #include "vp.hpp"
 
-Vp::Vp (sc_core::sc_module_name name,char** strings,int argv):
+Vp::Vp (sc_core::sc_module_name name):
 sc_module(name),
-cpu("Cpu",strings,argv),
+cpu("Cpu"),
 interconnect("Interconnect"),
 hard("Hard"),
 bram("Bram")
