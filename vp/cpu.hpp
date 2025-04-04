@@ -10,9 +10,9 @@
 #include <vector>
 #include <sstream>
 
-#include<cstdlib>
+#include <cstdlib>
 //#include<conio.h>
-#include<ctime>
+#include <ctime>
 
 
 
@@ -33,11 +33,12 @@ public:
     int PlayOut;
     int EVA;
     bool provocation;
-    void get_ip();
+    int get_ip();
 
-    void clean();
+    //void clean();
     void Board();
     void PlayPosition(char XO);
+    void main_thread();
    
 
 protected:

@@ -24,4 +24,3 @@ class Vp: public sc_core::sc_module
 };
 
 #endif// VP_HPP_
-

@@ -21,4 +21,3 @@ Vp::~Vp()
 {
 	SC_REPORT_INFO("VP","Destroyed.");
 }
-

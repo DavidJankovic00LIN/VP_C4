@@ -19,7 +19,7 @@ void Hard::b_transport(pl_t &pl,sc_time &offset)
 {
 	tlm_command cmd=pl.get_command();
 	sc_dt::uint64 addr=pl.get_address();
-	//unsigned int len= pl.get_data_length();
+	unsigned int len= pl.get_data_length();
 	unsigned char *buf= pl.get_data_ptr();
 	pl.set_response_status(TLM_OK_RESPONSE);
 
@@ -30,7 +30,7 @@ void Hard::b_transport(pl_t &pl,sc_time &offset)
 			{
 			case ADDR_START:
 				start=toInt(buf);
-				cout<<"start= "<<start<<endl;
+				//cout<<"start= "<<start<<endl;
 				winning(offset);
 				break;
 			default:
@@ -64,11 +64,26 @@ void Hard::b_transport(pl_t &pl,sc_time &offset)
 }
 
 
-///proveriti tacno kakao se formira BaseAddres za read_bram i  da li treba??
 
-//hardverska winning funkcija
-uint8_t Hard::winning(sc_core::sc_time &system_offset){
+
+
+    //SC_REPORT_INFO("HARD", "Checking win conditions...");
+   // wait(100, SC_NS);
+    // Debug ispis table
+   /* for(int row = 0; row < 6; row++) {
+        std::string row_str;
+        for(int col = 0; col < 7; col++) {
+            unsigned char val = read_bram(VP_ADDR_BRAM_L+row * 7 + col);
+            row_str += (val == ' ') ? "." : std::string(1, val);
+            row_str += " ";
+        }
+        SC_REPORT_INFO("HARD", ("Row " + std::to_string(row) + ": " + row_str).c_str());
+    }*/
+
+    // Provera horizontalnih linija
+    uint8_t Hard::winning(sc_core::sc_time &system_offset){
 	pl_t pl;
+   // SC_REPORT_INFO("HARD", "Checking win conditions...");
 
 	if (start == 1 && ready==1){
 		ready=0;
@@ -148,6 +163,7 @@ uint8_t Hard::winning(sc_core::sc_time &system_offset){
 	ready=1;
 	return 0;
 }
+
 
 /*kod sa odredjenim ispravkama vezanih za proveru nastavka igre-
 segment provere da li je tabla popunjena i dodati ready flagovi*/ 
@@ -254,15 +270,21 @@ void Hard::write_bram(sc_uint<64> addr, unsigned char val)
 
 unsigned char Hard::read_bram(sc_uint <64> addr)
 {
-
-	pl_t pl;
-	unsigned char buf;
-	pl.set_address(addr);
-	pl.set_data_length(1);
-	pl.set_data_ptr(&buf);
-	pl.set_command(tlm::TLM_READ_COMMAND);
-	pl.set_response_status(tlm::TLM_INCOMPLETE_RESPONSE);
-	bram_socket->b_transport(pl,offset);
-	return buf;
-
+    pl_t pl;
+    unsigned char buf;
+    pl.set_address(VP_ADDR_BRAM_L+addr);
+    pl.set_data_length(1);
+    pl.set_data_ptr(&buf);
+    pl.set_command(tlm::TLM_READ_COMMAND);
+    pl.set_response_status(tlm::TLM_INCOMPLETE_RESPONSE);
+    
+    // DEBUG: Before reading
+   // SC_REPORT_INFO("HARD", ("Attempting to read from BRAM addr: " + std::to_string(addr)).c_str());
+    
+    bram_socket->b_transport(pl,offset);
+    
+    // DEBUG: After reading
+   /* SC_REPORT_INFO("HARD", ("Read from BRAM addr " + std::to_string(addr) + ": '" + std::string(1, buf) + "' (0x" + to_hex(buf) + ")").c_str());*/
+    
+    return buf;
 }
