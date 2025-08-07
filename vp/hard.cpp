@@ -71,6 +71,10 @@ void Hard::b_transport(pl_t &pl,sc_time &offset)
 
 uint8_t Hard::winning(sc_core::sc_time &system_offset)
 {
+	// OPTIMIZACIJA: Batch čitanje cele table u jednoj TLM transakciji
+	unsigned char board[42];
+	read_board_batch(board);
+
 	{
 	
 
@@ -78,11 +82,11 @@ uint8_t Hard::winning(sc_core::sc_time &system_offset)
 			
 			for(int row = 0; row < 6; row++){ // 6 redova
 		        for (int col = 0; col <= 3; col++) { // Maksimalno 4 startne tačke po redu
-		            unsigned char symbol = read_bram(row * 7 + col);
+		            unsigned char symbol = board[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == read_bram(row * 7 + col + 1) &&
-		                symbol == read_bram(row * 7 + col + 2) &&
-		                symbol == read_bram(row * 7 + col + 3))
+		                symbol ==board[row * 7 + col + 1] &&
+		                symbol == board[row * 7 + col + 2] &&
+		                symbol == board[row * 7 + col + 3])
 
 		                								 {
 		                return (symbol == 'X') ? 1 : 2;
@@ -93,11 +97,11 @@ uint8_t Hard::winning(sc_core::sc_time &system_offset)
 		    // Provera vertikalnih linija
 		    for (int col = 0; col < 7; col++) { // 7 kolona
 		        for (int row = 0; row <= 2; row++) { // Maksimalno 3 startne tačke po koloni
-		           unsigned char symbol = read_bram(row * 7 + col);
+		           unsigned char symbol = board[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == read_bram((row + 1) * 7 + col) &&
-		                symbol == read_bram((row + 2) * 7 + col) &&
-		                symbol == read_bram((row + 3) * 7 + col)) {
+		                symbol == board[(row + 1) * 7 + col] &&
+		                symbol == board[(row + 2) * 7 + col] &&
+		                symbol == board[(row + 3) * 7 + col]) {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -106,11 +110,11 @@ uint8_t Hard::winning(sc_core::sc_time &system_offset)
 		    // Provera dijagonala (desno-nadole)
 		    for (int row = 0; row <= 2; row++) { // 3 startne tačke po redu
 		        for (int col = 0; col <= 3; col++) { // 4 startne tačke po koloni
-		            unsigned char symbol = read_bram(row * 7 + col);
+		            unsigned char symbol = board[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == read_bram((row + 1) * 7 + col + 1) &&
-		                symbol == read_bram((row + 2) * 7 + col + 2) &&
-		                symbol == read_bram((row + 3) * 7 + col + 3)) {
+		                symbol == board[(row + 1) * 7 + col + 1] &&
+		                symbol == board[(row + 2) * 7 + col + 2] &&
+		                symbol == board[(row + 3) * 7 + col + 3]) {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -119,11 +123,11 @@ uint8_t Hard::winning(sc_core::sc_time &system_offset)
 		    // Provera dijagonala (levo-nadole)
 		    for (int row = 0; row <= 2; row++) { // 3 startne tačke po redu
 		        for (int col = 3; col < 7; col++) { // 4 startne tačke po koloni
-		            unsigned char symbol = read_bram(row * 7 + col);
+		            unsigned char symbol = board[row * 7 + col];
 		            if (symbol != ' ' &&
-		                symbol == read_bram((row + 1) * 7 + col - 1) &&
-		                symbol == read_bram((row + 2) * 7 + col - 2) &&
-		                symbol == read_bram((row + 3) * 7 + col - 3)) {
+		                symbol == board[(row + 1) * 7 + col - 1] &&
+		                symbol == board[(row + 2) * 7 + col - 2] &&
+		                symbol == board[(row + 3) * 7 + col - 3]) {
 		                return (symbol == 'X') ? 1 : 2;
 		            }
 		        }
@@ -131,7 +135,7 @@ uint8_t Hard::winning(sc_core::sc_time &system_offset)
 
 		    // Provera da li je tabla puna
 		    for (int i = 0; i < 42; i++) { // 42 pozicije
-		    	unsigned char symbol=read_bram(i);
+		    	unsigned char symbol=board[i];
 		        if (symbol == ' ') {
 		            return 0; // Igra se nastavlja
 		        }
@@ -183,4 +187,21 @@ unsigned char Hard::read_bram(sc_uint <64> addr)
    /* SC_REPORT_INFO("HARD", ("Read from BRAM addr " + std::to_string(addr) + ": '" + std::string(1, buf) + "' (0x" + to_hex(buf) + ")").c_str());*/
     
     return buf;
+}
+
+//  Batch čitanje cele table iz BRAM-a
+void Hard::read_board_batch(unsigned char board[42])
+{
+    pl_t pl;
+    pl.set_address(VP_ADDR_BRAM_L);  // Početna adresa BRAM-a
+    pl.set_data_length(42);          // Čitamo 42 bajta (celu tablu)
+    pl.set_data_ptr(board);          // Direktno u board niz
+    pl.set_command(tlm::TLM_READ_COMMAND);
+    pl.set_response_status(tlm::TLM_INCOMPLETE_RESPONSE);
+    
+    // JEDNA TLM transakcija umesto 42!
+    bram_socket->b_transport(pl, offset);
+    
+    // DEBUG: Možemo dodati log ako je potrebno
+    // SC_REPORT_INFO("HARD", "Batch read completed - 42 bytes in one transaction");
 }

@@ -36,6 +36,9 @@ protected:
 	void b_transport(pl_t&, sc_time&);
 	void write_bram(sc_uint<64> addr, unsigned char val);
 	unsigned char read_bram(sc_uint<64> addr);
+	
+	// NOVA FUNKCIJA: Batch čitanje cele table
+	void read_board_batch(unsigned char board[42]);
 
 };
 
