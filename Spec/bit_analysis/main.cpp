@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <conio.h>
+//#include <conio.h>
 #include <ctime>
 #include <fstream>
 #include<vector>
@@ -277,7 +277,7 @@ int main() // main funkcija gde AI ima prvi potez
     while (true)
     {
         input[AIManager()] = 'O';  // AI bira potez prvi
-        system("clear");
+        //system("clear");
         Board();
         uint8_t winningtemp = winning();
 		//cout << "Velicina winning() je: " << sizeof(winning()) << endl;
@@ -292,7 +292,7 @@ int main() // main funkcija gde AI ima prvi potez
             else if (winningtemp == 3){
                 cout << "You Tie ! ";
                 return 0;}
-            getch();
+           // getch();
             clean();
         }
         else

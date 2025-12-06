@@ -286,9 +286,15 @@ int AIManager()
         int negamaxScore = -NegaMax(1, -INF, INF, 'X');
         
         // Kombinuj NegaMax rezultat sa Monte Carlo evaluacijom
-        float score = -(100 * negamaxScore);
+        // Koristimo manje skale da EVA/PlayOut ima realnu težinu
+        float score = -negamaxScore; // NegaMax već daje dobre vrednosti
+        
+        // Monte Carlo evaluacija - daje dodatnu težinu u opsegu -100 do +100
         if(PlayOut != 0)
-            score -= ((100 * EVA) / PlayOut);
+        {
+            float mcEval = (100.0f * EVA) / PlayOut;
+            score += mcEval; // Dodaj Monte Carlo evaluaciju direktno
+        }
         
         // Bonus za centar (kolona 4 je najbolja)
         if(column == 4)
@@ -317,6 +323,21 @@ int AIManager()
 }
 
 
+// Heuristička evaluacija pozicije (koristi se na MAX_DEPTH)
+int evaluatePosition(char Player)
+{
+    int score = 0;
+    char opponent = (Player == 'O') ? 'X' : 'O';
+    
+    // Broji potencijalne pobede (2 i 3 u nizu)
+    // Ovo je pojednostavljena heuristika
+    // Može se poboljšati brojanjem svih mogućih linija
+    
+    // Za sada vraćamo 0 jer Monte Carlo evaluacija daje bolje rezultate
+    // Ali struktura je tu za buduća poboljšanja
+    return 0;
+}
+
 int NegaMax(int Depth, int Alfa, int Beta, char Player)
 {
     uint8_t win=winning();
@@ -339,7 +360,12 @@ int NegaMax(int Depth, int Alfa, int Beta, char Player)
     }
 
    if(Depth>=MAX_DEPTH){
-    return 0;
+    // Heuristička evaluacija umesto čistog 0
+    int eval = evaluatePosition(Player);
+    if(Player == 'O')
+        return eval;
+    else
+        return -eval;
    }
    
    int bestScore=-INF;
@@ -357,11 +383,17 @@ int NegaMax(int Depth, int Alfa, int Beta, char Player)
            {
                PlayOut++;
                if(Player == 'O')
+               {
                    EVA++;
+                   input[PlayNumber[column]] = ' ';
+                   return 1000 - Depth; // Konzistentno sa drugim povratnim vrednostima
+               }
                else
+               {
                    EVA--;
-               input[PlayNumber[column]] = ' ';
-               return -1;
+                   input[PlayNumber[column]] = ' ';
+                   return -1000 + Depth; // Konzistentno sa drugim povratnim vrednostima
+               }
            }
            input[PlayNumber[column]] = ' ';
        }
