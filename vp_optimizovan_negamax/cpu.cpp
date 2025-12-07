@@ -314,8 +314,8 @@ int Cpu::AIManager()
 		int negamaxScore=-NegaMax(1,-INF,INF,'X');
 		float score= -negamaxScore;
 		if(PlayOut !=0){
-			float mcEval=(100.0f*EVA)/PlayOut;
-			score-=mcEval;
+			float mcEval=(200.0f*EVA)/PlayOut;
+			score+=mcEval;
 		}
 		if(column==4){
 			score+=10;
@@ -324,7 +324,7 @@ int Cpu::AIManager()
 		}
 
 		if(mustBlock){
-			score+=500;
+			score+=800;
 		}
 		write_bram(pos,' ');
 		if(score>bestScore){
