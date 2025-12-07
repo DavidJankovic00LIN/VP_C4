@@ -1,0 +1,552 @@
+5/4/2025
+
+-Radi sve sto treba i kako treba, ali sporo -> utvrditi da li treba nesto poboljsati.
+
+-Uklonjen winning bug
+
+-Utvrditi da li treba dodati dodatne markere i koje za samu prezentaciju simulacije
+
+-Dodati uskoro bolje komentare u samu VP.
+
+4/4/2025
+
+Radi.Problem bio u funkciji za pisanje u bram.
+
+Nakon komentarisanja svih SC_REPORT_INFO proradilo je iscrtavanje table,igra se pokrece
+
+Postoji Bug : winning ne detektuje pobednika, nikad ne nadje pobednika : mora da se prepravi
+Zapazanje : dosta sporo ide simulacija,dugo traje ->Da li je normalno?
+
+
+Makefile komande
+------------------------------------------------------------------
+make       # Kompajlira
+
+make clean # Čisti
+
+make -n  # Testira makefile bez izvršavanja (dry run)
+./c4_specifikacija # pokrece simulaciju
+------------------------------------------------------------------
+
+za github stare verzije
+Preuzeti repozitorijum VP_C4 i uci u direktorium
+
+prikaži sve commit-e
+Prikaži listu svih commit-a da pronađeš onaj koji ti treba:
+git log --oneline --graph --all
+
+commit d4476357973575d657d902f4ec644941d411295b (HEAD -> master) ->ovo je <commit-hash>
+
+git checkout <commit-hash>
+
+ovim komandama moze da se pozove neka od predhodnih verzija
+
+-----------------------------------------------------------------
+
+izlaz :
+david@david-Inspiron-15-3573:~/Desktop/THE_PROJECT/VC_C4_V2$ ./c4_specifikacija 
+
+        SystemC 2.3.3-Accellera --- Mar 17 2022 13:55:26
+        Copyright (c) 1996-2018 by all Contributors,
+        ALL RIGHTS RESERVED
+
+Info: CPU: Constructed.
+
+Info: Interconnect: Constructed.
+
+Info: Hard: Constructed.
+
+Info: BRAM: Constructed.
+
+Info: VP: Constructed.
+
+Info: CPU: Main_Thread_Started
+
+Info: CPU: game_play started  #ovde mu treba vremena da krene igru
+
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |   X   |   X   |   X   |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |   X   |   X   |   X   |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------WARNING: Invalid move or position already taken. Taking the next available position.
+
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |   X   |   X   |   X   |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |   X   |   X   |   X   |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------WARNING: Invalid move or position already taken. Taking the next available position.
+
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |   X   |   X   |   X   |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------WARNING: Invalid move or position already taken. Taking the next available position.
+
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |       |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |       |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |       |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |       |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |       |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |       |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |       |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |       |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+    1       2       3       4       5       6       7   
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |       |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   O   |       |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |       |       |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   O   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------
+|       |       |       |       |       |       |       |
+|   O   |   X   |   O   |   X   |   X   |   X   |   X   |
+|       |       |       |       |       |       |       |
+---------------------------------------------------------WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+WARNING: Invalid move or position already taken. Taking the next available position.
+
