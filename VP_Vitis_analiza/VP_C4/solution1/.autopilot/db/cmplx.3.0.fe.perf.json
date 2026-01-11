@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 42,
+    "calls": "",
+    "file": "winning_hls.cpp",
+    "fileloc": 7,
+    "instructions": 179,
+    "loads": {
+      "T": 17
+    },
+    "name": "winning",
+    "stores": {
+      "T": 6
+    },
+    "total_instructions": 179
+  }
+}

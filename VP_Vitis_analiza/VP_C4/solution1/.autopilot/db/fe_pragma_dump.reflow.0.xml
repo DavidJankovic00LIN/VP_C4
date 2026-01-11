@@ -1,0 +1,5 @@
+<pragmas>
+<pragma file="winning_hls.cpp" line="8" pragmaType="interface" parentfunction="winning" mode="ap_ctrl_hs" port="return" name=""/>
+<pragma file="winning_hls.cpp" line="9" pragmaType="interface" parentfunction="winning" mode="ap_memory" port="board" storage_type="-1" impl="-1" latency="-1" name="" depth="-1"/>
+<pragma file="winning_hls.cpp" line="10" pragmaType="interface" parentfunction="winning" mode="ap_none" port="result" name="" register="0"/>
+</pragmas>

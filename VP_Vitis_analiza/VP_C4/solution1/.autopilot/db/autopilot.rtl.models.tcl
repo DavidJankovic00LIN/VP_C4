@@ -1,0 +1,12 @@
+set SynModuleInfo {
+  {SRCNAME winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 MODELNAME winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 RTLNAME winning_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2}
+  {SRCNAME winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 MODELNAME winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 RTLNAME winning_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4}
+  {SRCNAME winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 MODELNAME winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 RTLNAME winning_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6}
+  {SRCNAME winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 MODELNAME winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 RTLNAME winning_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8}
+  {SRCNAME winning_Pipeline_VITIS_LOOP_77_9 MODELNAME winning_Pipeline_VITIS_LOOP_77_9 RTLNAME winning_winning_Pipeline_VITIS_LOOP_77_9
+    SUBMODULES {
+      {MODELNAME winning_flow_control_loop_pipe_sequential_init RTLNAME winning_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME winning_flow_control_loop_pipe_sequential_init_U}
+    }
+  }
+  {SRCNAME winning MODELNAME winning RTLNAME winning IS_TOP 1}
+}

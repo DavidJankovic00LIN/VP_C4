@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "winning",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "winning"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/csynth.tcl",
+    "sourceLine": 15,
+    "success": true
+  }
+]

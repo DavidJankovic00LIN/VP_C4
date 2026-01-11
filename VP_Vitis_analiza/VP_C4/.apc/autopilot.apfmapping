@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="winning_hls.cpp" path="C:\Users\David\Desktop\VP_Vitis_analiza\winning_hls.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="winning_tb.cpp" path="C:\Users\David\Desktop\VP_Vitis_analiza\winning_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

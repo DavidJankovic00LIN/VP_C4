@@ -1,0 +1,236 @@
+ECHO is off.
+ECHO is off.
+NOTE: Using modified tcl85t.dll from https://gitenterprise.xilinx.com/ACT/vitis_hls_tcl
+INFO: [HLS 200-10] Running 'D:/Programi/VIVADO/Vitis_HLS/2023.1/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'David' on host 'desktop-o613mv8' (Windows NT_amd64 version 6.2) on Sun Jan 11 21:20:00 +0100 2026
+INFO: [HLS 200-10] In directory 'C:/Users/David/Desktop/VP_Vitis_analiza'
+Sourcing Tcl script 'C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/csynth.tcl
+INFO: [HLS 200-1510] Running: open_project VP_C4 
+INFO: [HLS 200-10] Opening project 'C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4'.
+INFO: [HLS 200-1510] Running: set_top winning 
+INFO: [HLS 200-1510] Running: add_files winning_hls.cpp 
+INFO: [HLS 200-10] Adding design file 'winning_hls.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb winning_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'winning_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 112.355 MB.
+INFO: [HLS 200-10] Analyzing design file 'winning_hls.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.825 seconds; current allocated memory: 113.348 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.638 seconds; current allocated memory: 114.207 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.005 seconds; current allocated memory: 114.215 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 119.320 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 120.742 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_14_2' (winning_hls.cpp:14) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_30_4' (winning_hls.cpp:30) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_46_6' (winning_hls.cpp:46) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_62_8' (winning_hls.cpp:62) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_77_9' (winning_hls.cpp:77) in function 'winning' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.231 seconds; current allocated memory: 142.535 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_13_1' (winning_hls.cpp:13:19) in function 'winning'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_29_3' (winning_hls.cpp:29:22) in function 'winning'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_45_5' (winning_hls.cpp:45:22) in function 'winning'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_61_7' (winning_hls.cpp:61:22) in function 'winning'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.185 seconds; current allocated memory: 180.887 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'winning' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1_VITIS_LOOP_14_2'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 1 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 2 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 3 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 4 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 11 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 13 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_13_1_VITIS_LOOP_14_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.829 seconds; current allocated memory: 186.246 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.349 seconds; current allocated memory: 187.586 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_29_3_VITIS_LOOP_30_4'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 1 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 2 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 3 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 4 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 11 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 13 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_29_3_VITIS_LOOP_30_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.686 seconds; current allocated memory: 188.207 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.458 seconds; current allocated memory: 188.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_45_5_VITIS_LOOP_46_6'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 1 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 2 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 3 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 4 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 11 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 13 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_45_5_VITIS_LOOP_46_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.651 seconds; current allocated memory: 189.195 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.355 seconds; current allocated memory: 189.223 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_61_7_VITIS_LOOP_62_8'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 1 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 2 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 3 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 4 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 11 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 13 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_61_7_VITIS_LOOP_62_8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.623 seconds; current allocated memory: 189.906 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.366 seconds; current allocated memory: 189.918 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_77_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_77_9'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln78', winning_hls.cpp:78)) in the first pipeline iteration (II = 1 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln78', winning_hls.cpp:78)) in the first pipeline iteration (II = 2 cycles).
+Resolution: For help on HLS 200-878 see www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=200-878.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 3, loop 'VITIS_LOOP_77_9'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.296 seconds; current allocated memory: 190.145 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 190.207 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.204 seconds; current allocated memory: 190.500 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.383 seconds; current allocated memory: 190.742 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.67 seconds; current allocated memory: 192.648 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.788 seconds; current allocated memory: 195.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.53 seconds; current allocated memory: 196.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.455 seconds; current allocated memory: 199.152 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_77_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_77_9/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_77_9/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_77_9'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.514 seconds; current allocated memory: 201.129 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'winning/board' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'winning/result' to 'ap_none'.
+WARNING: [RTGEN 206-101] Port 'result' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'winning' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.74 seconds; current allocated memory: 202.020 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.029 seconds; current allocated memory: 206.480 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.198 seconds; current allocated memory: 211.465 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for winning.
+INFO: [VLOG 209-307] Generating Verilog RTL for winning.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 273.97 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 1 seconds. Elapsed time: 26.129 seconds; current allocated memory: 99.695 MB.
+INFO: [HLS 200-112] Total CPU user time: 9 seconds. Total CPU system time: 2 seconds. Total elapsed time: 29.307 seconds; peak allocated memory: 211.992 MB.

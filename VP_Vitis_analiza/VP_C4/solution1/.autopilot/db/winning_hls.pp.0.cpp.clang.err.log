@@ -1,0 +1,13 @@
+C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/csynth.tcl:15:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=winning_XLX_SEP_ PragmaOptions=name=winning_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=winning
+        ^
+winning_hls.cpp:8:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=winning_XLX_SEP_ PragmaOptions=ap_ctrl_hs port=return_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_ctrl_hs port=return
+        ^
+winning_hls.cpp:9:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=winning_XLX_SEP_ PragmaOptions=bram port=board_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE bram port=board
+        ^
+winning_hls.cpp:10:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=winning_XLX_SEP_ PragmaOptions=ap_none port=result_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_none port=result
+        ^
+4 warnings generated.

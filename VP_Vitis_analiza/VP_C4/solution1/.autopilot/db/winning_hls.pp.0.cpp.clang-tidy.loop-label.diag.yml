@@ -1,0 +1,130 @@
+---
+MainSourceFile:  'C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1213_1:  '
+    FileOffset:      1213
+    FilePath:        'D:\Programi\VIVADO\Vitis_HLS\2023.1\common\technology\autopilot\etc\ap_int_base.h'
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          55560
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1213_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        'D:\Programi\VIVADO\Vitis_HLS\2023.1\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          283136
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        'D:\Programi\VIVADO\Vitis_HLS\2023.1\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          283600
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        'D:\Programi\VIVADO\Vitis_HLS\2023.1\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          284065
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1247_1:  '
+    FileOffset:      1247
+    FilePath:        'D:\Programi\VIVADO\Vitis_HLS\2023.1\common\technology\autopilot\etc\ap_fixed_base.h'
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          567057
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_13_1:  '
+    FileOffset:      13
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          939391
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_13_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_14_2:  '
+    FileOffset:      14
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          939434
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_14_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_29_3:  '
+    FileOffset:      29
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          939832
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_29_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_30_4:  '
+    FileOffset:      30
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          939876
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_30_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_45_5:  '
+    FileOffset:      45
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          940310
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_45_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_46_6:  '
+    FileOffset:      46
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          940355
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_46_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_61_7:  '
+    FileOffset:      61
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          940801
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_61_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_62_8:  '
+    FileOffset:      62
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          940846
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_62_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_77_9:  '
+    FileOffset:      77
+    FilePath:        winning_hls.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\David\Desktop\VP_Vitis_analiza\VP_C4\solution1\.autopilot\db\winning_hls.pp.0.cpp'
+        Offset:          941291
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_77_9: '
+...

@@ -1,0 +1,769 @@
+INFO-FLOW: Workspace C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1 opened at Sun Jan 11 21:20:00 +0100 2026
+Execute     ap_set_clock -name default -period 5 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute     set_part xc7z020clg484-1 
+Execute       create_platform xc7z020clg484-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/Programi/VIVADO/Vitis_HLS/2023.1\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/Programi/VIVADO/Vivado/2023.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+Command       create_platform done; 1.626 sec.
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.12 sec.
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.827 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 2.033 sec.
+Execute   set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+Execute     create_platform xc7z020clg484-1 -board  
+Execute     source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.108 sec.
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.147 sec.
+Execute     ap_part_info -name xc7z020-clg484-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.212 sec.
+Execute   create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+Execute     ap_set_clock -name default -period 5 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 112.355 MB.
+Execute       set_directive_top winning -name=winning 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO: [HLS 200-10] Analyzing design file 'winning_hls.cpp' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling winning_hls.cpp as C++
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang winning_hls.cpp -foptimization-record-file=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot D:/Programi/VIVADO/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/autopilot -I D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp {-hls-platform-db-name=D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg484-1 > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.cpp.clang.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.cpp.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.7 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp {-hls-platform-db-name=D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg484-1 > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/clang.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.773 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 1.55 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1.6 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.clang-tidy.loop-label.err.log
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 1.398 sec.
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7z020-clg484-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/autopilot -I D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.bc {-hls-platform-db-name=D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg484-1 > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.clang.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.pp.0.cpp.clang.err.log
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.825 seconds; current allocated memory: 113.348 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.g.bc"  
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_hls.g.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.187 sec.
+Execute       run_link_or_opt -opt -out C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/lib/libhlsm_39.bc D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/lib/libhlsm_39.bc D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/lib/libhlsmc++_39.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 3.145 sec.
+Execute       run_link_or_opt -opt -out C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=winning -reflow-float-conversion 
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=winning -reflow-float-conversion -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 1.059 sec.
+Execute       run_link_or_opt -out C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/lib/libfloatconversion_39.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=winning 
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.5.gdce.bc > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang exec: D:/Programi/VIVADO/Vitis_HLS/2023.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=winning -mllvm -hls-db-dir -mllvm C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -enable-fp-thr=0 -mllvm -reflow-bdd-simplify-threshold=1024 -mllvm -reflow-fanout-threshold=16 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=1024 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=5 -x ir C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg484-1 > C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.out.log 2> C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.638 seconds; current allocated memory: 114.207 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.005 seconds; current allocated memory: 114.215 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top winning -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.0.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 119.320 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.1.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 120.742 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.g.1.bc to C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.1.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_14_2' (winning_hls.cpp:14) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_30_4' (winning_hls.cpp:30) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_46_6' (winning_hls.cpp:46) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_62_8' (winning_hls.cpp:62) in function 'winning' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_77_9' (winning_hls.cpp:77) in function 'winning' automatically.
+Command         transform done; 0.174 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.231 seconds; current allocated memory: 142.535 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dce -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric -cdfg-build C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.2.bc -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_13_1' (winning_hls.cpp:13:19) in function 'winning'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_29_3' (winning_hls.cpp:29:22) in function 'winning'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_45_5' (winning_hls.cpp:45:22) in function 'winning'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_61_7' (winning_hls.cpp:61:22) in function 'winning'.
+Execute           auto_get_db
+Command         transform done; 0.185 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.185 seconds; current allocated memory: 180.887 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 0.563 sec.
+Command     elaborate done; 14.069 sec.
+Execute     ap_eval exec zip -j C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'winning' ...
+Execute       ap_set_top_model winning 
+Execute       get_model_list winning -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model winning 
+Execute       preproc_iomode -model winning_Pipeline_VITIS_LOOP_77_9 
+Execute       preproc_iomode -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       preproc_iomode -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       preproc_iomode -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       preproc_iomode -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       get_model_list winning -filter all-wo-channel 
+INFO-FLOW: Model list for configure: winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 winning_Pipeline_VITIS_LOOP_77_9 winning
+INFO-FLOW: Configuring Module : winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       apply_spec_resource_limit winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+INFO-FLOW: Configuring Module : winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       apply_spec_resource_limit winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+INFO-FLOW: Configuring Module : winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       apply_spec_resource_limit winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+INFO-FLOW: Configuring Module : winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       apply_spec_resource_limit winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+INFO-FLOW: Configuring Module : winning_Pipeline_VITIS_LOOP_77_9 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_77_9 
+Execute       apply_spec_resource_limit winning_Pipeline_VITIS_LOOP_77_9 
+INFO-FLOW: Configuring Module : winning ...
+Execute       set_default_model winning 
+Execute       apply_spec_resource_limit winning 
+INFO-FLOW: Model list for preprocess: winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 winning_Pipeline_VITIS_LOOP_77_9 winning
+INFO-FLOW: Preprocessing Module: winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       cdfg_preprocess -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+INFO-FLOW: Preprocessing Module: winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       cdfg_preprocess -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+INFO-FLOW: Preprocessing Module: winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       cdfg_preprocess -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+INFO-FLOW: Preprocessing Module: winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       cdfg_preprocess -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+INFO-FLOW: Preprocessing Module: winning_Pipeline_VITIS_LOOP_77_9 ...
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_77_9 
+Execute       cdfg_preprocess -model winning_Pipeline_VITIS_LOOP_77_9 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_77_9 
+INFO-FLOW: Preprocessing Module: winning ...
+Execute       set_default_model winning 
+Execute       cdfg_preprocess -model winning 
+Execute       rtl_gen_preprocess winning 
+INFO-FLOW: Model list for synthesis: winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 winning_Pipeline_VITIS_LOOP_77_9 winning
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       schedule -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1_VITIS_LOOP_14_2'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 2 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 3 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 4 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 11 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln21', winning_hls.cpp:21)) in the first pipeline iteration (II = 13 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_13_1_VITIS_LOOP_14_2'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.662 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.829 seconds; current allocated memory: 186.246 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.178 sec.
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.sched.adb -f 
+INFO-FLOW: Finish scheduling winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       bind -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.155 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.349 seconds; current allocated memory: 187.586 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.bind.adb -f 
+INFO-FLOW: Finish binding winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       schedule -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_29_3_VITIS_LOOP_30_4'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 2 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 3 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 4 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 11 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln37', winning_hls.cpp:37)) in the first pipeline iteration (II = 13 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_29_3_VITIS_LOOP_30_4'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.583 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.686 seconds; current allocated memory: 188.207 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.254 sec.
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.sched.adb -f 
+INFO-FLOW: Finish scheduling winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       bind -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.188 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.458 seconds; current allocated memory: 188.285 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.bind.adb -f 
+INFO-FLOW: Finish binding winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       schedule -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_45_5_VITIS_LOOP_46_6'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 2 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 3 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 4 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 11 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln53', winning_hls.cpp:53)) in the first pipeline iteration (II = 13 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_45_5_VITIS_LOOP_46_6'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.502 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.651 seconds; current allocated memory: 189.195 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.178 sec.
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.sched.adb -f 
+INFO-FLOW: Finish scheduling winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       bind -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.152 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.355 seconds; current allocated memory: 189.223 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.bind.adb -f 
+INFO-FLOW: Finish binding winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       schedule -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_61_7_VITIS_LOOP_62_8'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 2 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 3 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 4 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 11 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln69', winning_hls.cpp:69)) in the first pipeline iteration (II = 13 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 14, loop 'VITIS_LOOP_61_7_VITIS_LOOP_62_8'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.515 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.623 seconds; current allocated memory: 189.906 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.18 sec.
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.sched.adb -f 
+INFO-FLOW: Finish scheduling winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       bind -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.17 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.366 seconds; current allocated memory: 189.918 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.bind.adb -f 
+INFO-FLOW: Finish binding winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning_Pipeline_VITIS_LOOP_77_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_77_9 
+Execute       schedule -model winning_Pipeline_VITIS_LOOP_77_9 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_77_9'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln78', winning_hls.cpp:78)) in the first pipeline iteration (II = 1 cycles).
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation ('icmp_ln78', winning_hls.cpp:78)) in the first pipeline iteration (II = 2 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 3, loop 'VITIS_LOOP_77_9'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.179 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.296 seconds; current allocated memory: 190.145 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.sched.adb -f 
+INFO-FLOW: Finish scheduling winning_Pipeline_VITIS_LOOP_77_9.
+Execute       set_default_model winning_Pipeline_VITIS_LOOP_77_9 
+Execute       bind -model winning_Pipeline_VITIS_LOOP_77_9 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 190.207 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.bind.adb -f 
+INFO-FLOW: Finish binding winning_Pipeline_VITIS_LOOP_77_9.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'winning' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model winning 
+Execute       schedule -model winning 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.135 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.204 seconds; current allocated memory: 190.500 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.167 sec.
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.sched.adb -f 
+INFO-FLOW: Finish scheduling winning.
+Execute       set_default_model winning 
+Execute       bind -model winning 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.2 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.383 seconds; current allocated memory: 190.742 MB.
+Execute       syn_report -verbosereport -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.132 sec.
+Execute       db_write -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.bind.adb -f 
+INFO-FLOW: Finish binding winning.
+Execute       get_model_list winning -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       rtl_gen_preprocess winning_Pipeline_VITIS_LOOP_77_9 
+Execute       rtl_gen_preprocess winning 
+INFO-FLOW: Model list for RTL generation: winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 winning_Pipeline_VITIS_LOOP_77_9 winning
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -top_prefix winning_ -sub_prefix winning_ -mg_file C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.compgen.tcl 
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2'.
+Command       create_rtl_model done; 0.363 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.67 seconds; current allocated memory: 192.648 MB.
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -style xilinx -f -lang vhdl -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/vhdl/winning_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -style xilinx -f -lang vlog -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/verilog/winning_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+Execute       syn_report -csynth -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2_csynth.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.233 sec.
+Execute       syn_report -rtlxml -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2_csynth.xml 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -verbosereport -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.verbose.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.154 sec.
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -f -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.adb 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -bindview -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 -p C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -top_prefix winning_ -sub_prefix winning_ -mg_file C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.compgen.tcl 
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.788 seconds; current allocated memory: 195.180 MB.
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -style xilinx -f -lang vhdl -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/vhdl/winning_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -style xilinx -f -lang vlog -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/verilog/winning_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+Execute       syn_report -csynth -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4_csynth.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -rtlxml -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4_csynth.xml 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -verbosereport -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.verbose.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.104 sec.
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -f -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.adb 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -bindview -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 -p C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -top_prefix winning_ -sub_prefix winning_ -mg_file C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.compgen.tcl 
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.53 seconds; current allocated memory: 196.914 MB.
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -style xilinx -f -lang vhdl -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/vhdl/winning_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -style xilinx -f -lang vlog -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/verilog/winning_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+Execute       syn_report -csynth -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6_csynth.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -rtlxml -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6_csynth.xml 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -verbosereport -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.verbose.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -f -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.adb 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -bindview -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 -p C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -top_prefix winning_ -sub_prefix winning_ -mg_file C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.compgen.tcl 
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.455 seconds; current allocated memory: 199.152 MB.
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -style xilinx -f -lang vhdl -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/vhdl/winning_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -style xilinx -f -lang vlog -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/verilog/winning_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+Execute       syn_report -csynth -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8_csynth.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -rtlxml -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8_csynth.xml 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -verbosereport -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.verbose.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -f -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.adb 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -bindview -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 -p C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning_Pipeline_VITIS_LOOP_77_9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model winning_Pipeline_VITIS_LOOP_77_9 -top_prefix winning_ -sub_prefix winning_ -mg_file C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.compgen.tcl 
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_77_9/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning_Pipeline_VITIS_LOOP_77_9/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning_Pipeline_VITIS_LOOP_77_9'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.514 seconds; current allocated memory: 201.129 MB.
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_77_9 -style xilinx -f -lang vhdl -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/vhdl/winning_winning_Pipeline_VITIS_LOOP_77_9 
+Execute       gen_rtl winning_Pipeline_VITIS_LOOP_77_9 -style xilinx -f -lang vlog -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/verilog/winning_winning_Pipeline_VITIS_LOOP_77_9 
+Execute       syn_report -csynth -model winning_Pipeline_VITIS_LOOP_77_9 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_77_9_csynth.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -rtlxml -model winning_Pipeline_VITIS_LOOP_77_9 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_Pipeline_VITIS_LOOP_77_9_csynth.xml 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -verbosereport -model winning_Pipeline_VITIS_LOOP_77_9 -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.verbose.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.171 sec.
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_77_9 -f -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.adb 
+Execute       db_write -model winning_Pipeline_VITIS_LOOP_77_9 -bindview -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info winning_Pipeline_VITIS_LOOP_77_9 -p C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'winning' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model winning -top_prefix  -sub_prefix winning_ -mg_file C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'winning/board' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'winning/result' to 'ap_none'.
+WARNING: [RTGEN 206-101] Port 'result' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'winning' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning/board_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'winning/board_Din_A' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'winning'.
+Command       create_rtl_model done; 0.351 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.74 seconds; current allocated memory: 202.020 MB.
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       gen_rtl winning -istop -style xilinx -f -lang vhdl -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/vhdl/winning 
+Execute       gen_rtl winning -istop -style xilinx -f -lang vlog -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/verilog/winning 
+Execute       syn_report -csynth -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_csynth.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -rtlxml -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/winning_csynth.xml 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -verbosereport -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.verbose.rpt 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Command       syn_report done; 0.264 sec.
+Execute       db_write -model winning -f -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.adb 
+Execute       db_write -model winning -bindview -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info winning -p C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning 
+Execute       export_constraint_db -f -tool general -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.constraint.tcl 
+Execute       syn_report -designview -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.design.xml 
+Command       syn_report done; 0.226 sec.
+Execute       syn_report -csynthDesign -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/csynth.rpt -MHOut C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute         list_part -family xc7z020-clg484-1 
+Execute           ap_family_info -name xc7z020-clg484-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg484-1 -data family 
+Execute       syn_report -wcfg -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model winning -o C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.protoinst 
+Execute       sc_get_clocks winning 
+Execute       sc_get_portdomain winning 
+INFO-FLOW: Model list for RTL component generation: winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 winning_Pipeline_VITIS_LOOP_77_9 winning
+INFO-FLOW: Handling components in module [winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2] ... 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.compgen.tcl 
+INFO-FLOW: Handling components in module [winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4] ... 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.compgen.tcl 
+INFO-FLOW: Handling components in module [winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6] ... 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.compgen.tcl 
+INFO-FLOW: Handling components in module [winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8] ... 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.compgen.tcl 
+INFO-FLOW: Handling components in module [winning_Pipeline_VITIS_LOOP_77_9] ... 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.compgen.tcl 
+INFO-FLOW: Found component winning_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model winning_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [winning] ... 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.compgen.tcl 
+INFO-FLOW: Append model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2
+INFO-FLOW: Append model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4
+INFO-FLOW: Append model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6
+INFO-FLOW: Append model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8
+INFO-FLOW: Append model winning_Pipeline_VITIS_LOOP_77_9
+INFO-FLOW: Append model winning
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: winning_flow_control_loop_pipe_sequential_init winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 winning_Pipeline_VITIS_LOOP_77_9 winning
+INFO-FLOW: Generating C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model winning_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2
+INFO-FLOW: To file: write model winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4
+INFO-FLOW: To file: write model winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6
+INFO-FLOW: To file: write model winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8
+INFO-FLOW: To file: write model winning_Pipeline_VITIS_LOOP_77_9
+INFO-FLOW: To file: write model winning
+INFO-FLOW: Generating C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/generic/autopilot/common.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/generic/autopilot/op.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.11 sec.
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Programi/VIVADO/Vitis_HLS/2023.1/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.148 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/vhdl' dstVlogDir='C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/vlog' tclDir='C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db' modelList='winning_flow_control_loop_pipe_sequential_init
+winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2
+winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4
+winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6
+winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8
+winning_Pipeline_VITIS_LOOP_77_9
+winning
+' expOnly='0'
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.compgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.compgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.compgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.compgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.compgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.compgen.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.029 seconds; current allocated memory: 206.480 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='winning_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name winning
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.5 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='winning_flow_control_loop_pipe_sequential_init
+winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2
+winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4
+winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6
+winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8
+winning_Pipeline_VITIS_LOOP_77_9
+winning
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.compgen.dataonly.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning_Pipeline_VITIS_LOOP_77_9.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.tbgen.tcl 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg484-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg484-1 -data info -quiet 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/winning.constraint.tcl 
+Execute       sc_get_clocks winning 
+Execute       source C:/Users/David/Desktop/VP_Vitis_analiza/VP_C4/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST winning MODULE2INSTS {winning winning winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 grp_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2_fu_71 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 grp_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4_fu_78 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 grp_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6_fu_85 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 grp_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8_fu_92 winning_Pipeline_VITIS_LOOP_77_9 grp_winning_Pipeline_VITIS_LOOP_77_9_fu_99} INST2MODULE {winning winning grp_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2_fu_71 winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 grp_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4_fu_78 winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 grp_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6_fu_85 winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 grp_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8_fu_92 winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 grp_winning_Pipeline_VITIS_LOOP_77_9_fu_99 winning_Pipeline_VITIS_LOOP_77_9} INSTDATA {winning {DEPTH 1 CHILDREN {grp_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2_fu_71 grp_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4_fu_78 grp_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6_fu_85 grp_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8_fu_92 grp_winning_Pipeline_VITIS_LOOP_77_9_fu_99}} grp_winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2_fu_71 {DEPTH 2 CHILDREN {}} grp_winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4_fu_78 {DEPTH 2 CHILDREN {}} grp_winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6_fu_85 {DEPTH 2 CHILDREN {}} grp_winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8_fu_92 {DEPTH 2 CHILDREN {}} grp_winning_Pipeline_VITIS_LOOP_77_9_fu_99 {DEPTH 2 CHILDREN {}}} MODULEDATA {winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME empty_fu_172_p2 SOURCE winning_hls.cpp:13 VARIABLE empty LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_184_p2 SOURCE winning_hls.cpp:13 VARIABLE add_ln13 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_1_fu_199_p2 SOURCE winning_hls.cpp:13 VARIABLE add_ln13_1 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_mid1_fu_221_p2 SOURCE winning_hls.cpp:13 VARIABLE p_mid1 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_fu_237_p2 SOURCE winning_hls.cpp:15 VARIABLE add_ln15 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln19_fu_257_p2 SOURCE winning_hls.cpp:19 VARIABLE add_ln19 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln20_fu_266_p2 SOURCE winning_hls.cpp:20 VARIABLE add_ln20 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln21_fu_275_p2 SOURCE winning_hls.cpp:21 VARIABLE add_ln21 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_284_p2 SOURCE winning_hls.cpp:14 VARIABLE add_ln14 LOOP VITIS_LOOP_13_1_VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_fu_167_p2 SOURCE winning_hls.cpp:29 VARIABLE add_ln29 LOOP VITIS_LOOP_29_3_VITIS_LOOP_30_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_1_fu_193_p2 SOURCE winning_hls.cpp:29 VARIABLE add_ln29_1 LOOP VITIS_LOOP_29_3_VITIS_LOOP_30_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln31_fu_222_p2 SOURCE winning_hls.cpp:31 VARIABLE sub_ln31 LOOP VITIS_LOOP_29_3_VITIS_LOOP_30_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln31_fu_232_p2 SOURCE winning_hls.cpp:31 VARIABLE add_ln31 LOOP VITIS_LOOP_29_3_VITIS_LOOP_30_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_250_p2 SOURCE winning_hls.cpp:35 VARIABLE add_ln35 LOOP VITIS_LOOP_29_3_VITIS_LOOP_30_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME empty_fu_178_p2 SOURCE winning_hls.cpp:45 VARIABLE empty LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln45_fu_190_p2 SOURCE winning_hls.cpp:45 VARIABLE add_ln45 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next7740_fu_205_p2 SOURCE {} VARIABLE indvars_iv_next7740 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_mid114_fu_227_p2 SOURCE winning_hls.cpp:45 VARIABLE p_mid114 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln47_fu_248_p2 SOURCE winning_hls.cpp:47 VARIABLE add_ln47 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln51_fu_279_p2 SOURCE winning_hls.cpp:51 VARIABLE add_ln51 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln52_fu_299_p2 SOURCE winning_hls.cpp:52 VARIABLE add_ln52 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln53_fu_315_p2 SOURCE winning_hls.cpp:53 VARIABLE add_ln53 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln46_fu_324_p2 SOURCE winning_hls.cpp:46 VARIABLE add_ln46 LOOP VITIS_LOOP_45_5_VITIS_LOOP_46_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME empty_fu_182_p2 SOURCE winning_hls.cpp:61 VARIABLE empty LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln61_fu_194_p2 SOURCE winning_hls.cpp:61 VARIABLE add_ln61 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next6046_fu_209_p2 SOURCE {} VARIABLE indvars_iv_next6046 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_mid124_fu_231_p2 SOURCE winning_hls.cpp:61 VARIABLE p_mid124 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln63_fu_252_p2 SOURCE winning_hls.cpp:63 VARIABLE add_ln63 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln67_fu_278_p2 SOURCE winning_hls.cpp:67 VARIABLE add_ln67 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln67_1_fu_288_p2 SOURCE winning_hls.cpp:67 VARIABLE add_ln67_1 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln68_fu_297_p2 SOURCE winning_hls.cpp:68 VARIABLE add_ln68 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln68_1_fu_306_p2 SOURCE winning_hls.cpp:68 VARIABLE add_ln68_1 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln69_fu_315_p2 SOURCE winning_hls.cpp:69 VARIABLE add_ln69 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln69_1_fu_324_p2 SOURCE winning_hls.cpp:69 VARIABLE add_ln69_1 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln62_fu_333_p2 SOURCE winning_hls.cpp:62 VARIABLE add_ln62 LOOP VITIS_LOOP_61_7_VITIS_LOOP_62_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} winning_Pipeline_VITIS_LOOP_77_9 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln77_fu_85_p2 SOURCE winning_hls.cpp:77 VARIABLE add_ln77 LOOP VITIS_LOOP_77_9 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} winning {AREA {DSP 0 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.198 seconds; current allocated memory: 211.465 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for winning.
+INFO: [VLOG 209-307] Generating Verilog RTL for winning.
+Execute       syn_report -model winning -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 273.97 MHz
+Command     autosyn done; 11.797 sec.
+Command   csynth_design done; 26.129 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 1 seconds. Elapsed time: 26.129 seconds; current allocated memory: 99.695 MB.
+Command ap_source done; 28.442 sec.
+Execute cleanup_all 

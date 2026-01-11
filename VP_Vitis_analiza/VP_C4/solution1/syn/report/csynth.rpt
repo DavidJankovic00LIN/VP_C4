@@ -1,0 +1,151 @@
+
+
+================================================================
+== Synthesis Summary Report of 'winning'
+================================================================
++ General Information: 
+    * Date:           Sun Jan 11 21:20:27 2026
+    * Version:        2023.1 (Build 3854077 on May  4 2023)
+    * Project:        VP_C4
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |                       Modules                       | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |           |           |     |
+    |                       & Loops                       | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +-----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ winning                                            |     -|  0.00|     1169|  5.845e+03|         -|     1170|     -|        no|     -|   -|  506 (~0%)|  1742 (3%)|    -|
+    | + winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2  |     -|  0.00|      352|  1.760e+03|         -|      352|     -|        no|     -|   -|  101 (~0%)|  344 (~0%)|    -|
+    |  o VITIS_LOOP_13_1_VITIS_LOOP_14_2                  |    II|  3.65|      349|  1.745e+03|        14|       14|    24|       yes|     -|   -|          -|          -|    -|
+    | + winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4  |     -|  0.04|      310|  1.550e+03|         -|      310|     -|        no|     -|   -|  105 (~0%)|  319 (~0%)|    -|
+    |  o VITIS_LOOP_29_3_VITIS_LOOP_30_4                  |    II|  3.65|      307|  1.535e+03|        14|       14|    21|       yes|     -|   -|          -|          -|    -|
+    | + winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6  |     -|  0.15|      184|    920.000|         -|      184|     -|        no|     -|   -|  110 (~0%)|  342 (~0%)|    -|
+    |  o VITIS_LOOP_45_5_VITIS_LOOP_46_6                  |    II|  3.65|      181|    905.000|        14|       14|    12|       yes|     -|   -|          -|          -|    -|
+    | + winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8  |     -|  0.04|      184|    920.000|         -|      184|     -|        no|     -|   -|  110 (~0%)|  379 (~0%)|    -|
+    |  o VITIS_LOOP_61_7_VITIS_LOOP_62_8                  |    II|  3.65|      181|    905.000|        14|       14|    12|       yes|     -|   -|          -|          -|    -|
+    | + winning_Pipeline_VITIS_LOOP_77_9                  |     -|  0.15|      130|    650.000|         -|      130|     -|        no|     -|   -|   27 (~0%)|  108 (~0%)|    -|
+    |  o VITIS_LOOP_77_9                                  |    II|  3.65|      128|    640.000|         3|        3|    42|       yes|     -|   -|          -|          -|    -|
+    +-----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* BRAM
++-------------+------------+---------------+
+| Interface   | Data Width | Address Width |
++-------------+------------+---------------+
+| board_PORTA | 8          | 32            |
++-------------+------------+---------------+
+
+* Other Ports
++--------+---------+-----------+----------+
+| Port   | Mode    | Direction | Bitwidth |
++--------+---------+-----------+----------+
+| result | ap_none | out       | 32       |
++--------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------------+
+| Argument | Direction | Datatype       |
++----------+-----------+----------------+
+| board    | in        | unsigned char* |
+| result   | out       | int*           |
++----------+-----------+----------------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+
+| Argument | HW Interface | HW Type   |
++----------+--------------+-----------+
+| board    | board_PORTA  | interface |
+| result   | result       | port      |
++----------+--------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------------------+-----+--------+---------------------+-----+--------+---------+
+| Name                                                | DSP | Pragma | Variable            | Op  | Impl   | Latency |
++-----------------------------------------------------+-----+--------+---------------------+-----+--------+---------+
+| + winning                                           | 0   |        |                     |     |        |         |
+|  + winning_Pipeline_VITIS_LOOP_13_1_VITIS_LOOP_14_2 | 0   |        |                     |     |        |         |
+|    empty_fu_172_p2                                  | -   |        | empty               | sub | fabric | 0       |
+|    add_ln13_fu_184_p2                               | -   |        | add_ln13            | add | fabric | 0       |
+|    add_ln13_1_fu_199_p2                             | -   |        | add_ln13_1          | add | fabric | 0       |
+|    p_mid1_fu_221_p2                                 | -   |        | p_mid1              | sub | fabric | 0       |
+|    add_ln15_fu_237_p2                               | -   |        | add_ln15            | add | fabric | 0       |
+|    add_ln19_fu_257_p2                               | -   |        | add_ln19            | add | fabric | 0       |
+|    add_ln20_fu_266_p2                               | -   |        | add_ln20            | add | fabric | 0       |
+|    add_ln21_fu_275_p2                               | -   |        | add_ln21            | add | fabric | 0       |
+|    add_ln14_fu_284_p2                               | -   |        | add_ln14            | add | fabric | 0       |
+|  + winning_Pipeline_VITIS_LOOP_29_3_VITIS_LOOP_30_4 | 0   |        |                     |     |        |         |
+|    add_ln29_fu_167_p2                               | -   |        | add_ln29            | add | fabric | 0       |
+|    add_ln29_1_fu_193_p2                             | -   |        | add_ln29_1          | add | fabric | 0       |
+|    sub_ln31_fu_222_p2                               | -   |        | sub_ln31            | sub | fabric | 0       |
+|    add_ln31_fu_232_p2                               | -   |        | add_ln31            | add | fabric | 0       |
+|    add_ln35_fu_250_p2                               | -   |        | add_ln35            | add | fabric | 0       |
+|  + winning_Pipeline_VITIS_LOOP_45_5_VITIS_LOOP_46_6 | 0   |        |                     |     |        |         |
+|    empty_fu_178_p2                                  | -   |        | empty               | sub | fabric | 0       |
+|    add_ln45_fu_190_p2                               | -   |        | add_ln45            | add | fabric | 0       |
+|    indvars_iv_next7740_fu_205_p2                    | -   |        | indvars_iv_next7740 | add | fabric | 0       |
+|    p_mid114_fu_227_p2                               | -   |        | p_mid114            | sub | fabric | 0       |
+|    add_ln47_fu_248_p2                               | -   |        | add_ln47            | add | fabric | 0       |
+|    add_ln51_fu_279_p2                               | -   |        | add_ln51            | add | fabric | 0       |
+|    add_ln52_fu_299_p2                               | -   |        | add_ln52            | add | fabric | 0       |
+|    add_ln53_fu_315_p2                               | -   |        | add_ln53            | add | fabric | 0       |
+|    add_ln46_fu_324_p2                               | -   |        | add_ln46            | add | fabric | 0       |
+|  + winning_Pipeline_VITIS_LOOP_61_7_VITIS_LOOP_62_8 | 0   |        |                     |     |        |         |
+|    empty_fu_182_p2                                  | -   |        | empty               | sub | fabric | 0       |
+|    add_ln61_fu_194_p2                               | -   |        | add_ln61            | add | fabric | 0       |
+|    indvars_iv_next6046_fu_209_p2                    | -   |        | indvars_iv_next6046 | add | fabric | 0       |
+|    p_mid124_fu_231_p2                               | -   |        | p_mid124            | sub | fabric | 0       |
+|    add_ln63_fu_252_p2                               | -   |        | add_ln63            | add | fabric | 0       |
+|    add_ln67_fu_278_p2                               | -   |        | add_ln67            | add | fabric | 0       |
+|    add_ln67_1_fu_288_p2                             | -   |        | add_ln67_1          | add | fabric | 0       |
+|    add_ln68_fu_297_p2                               | -   |        | add_ln68            | add | fabric | 0       |
+|    add_ln68_1_fu_306_p2                             | -   |        | add_ln68_1          | add | fabric | 0       |
+|    add_ln69_fu_315_p2                               | -   |        | add_ln69            | add | fabric | 0       |
+|    add_ln69_1_fu_324_p2                             | -   |        | add_ln69_1          | add | fabric | 0       |
+|    add_ln62_fu_333_p2                               | -   |        | add_ln62            | add | fabric | 0       |
+|  + winning_Pipeline_VITIS_LOOP_77_9                 | 0   |        |                     |     |        |         |
+|    add_ln77_fu_85_p2                                | -   |        | add_ln77            | add | fabric | 0       |
++-----------------------------------------------------+-----+--------+---------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------+---------------------------------------+
+| Type      | Options                | Location                              |
++-----------+------------------------+---------------------------------------+
+| interface | ap_ctrl_hs port=return | winning_hls.cpp:8 in winning, return  |
+| interface | bram port=board        | winning_hls.cpp:9 in winning, board   |
+| interface | ap_none port=result    | winning_hls.cpp:10 in winning, result |
++-----------+------------------------+---------------------------------------+
+
+
